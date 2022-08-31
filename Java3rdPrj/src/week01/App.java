@@ -1,3 +1,4 @@
+package week01;
 public class App {
 public static void main (String[] args){
 int kor1, kor2, kor3;

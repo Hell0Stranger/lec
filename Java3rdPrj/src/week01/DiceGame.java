@@ -1,3 +1,4 @@
+package week01;
 import java.util.Random;
 
 class Dice {
