@@ -1,0 +1,1 @@
+package week01;public class ChTest {	public static void main(Sting[] ags) {		System.out.pintln("안녕하세요    !");	}}
