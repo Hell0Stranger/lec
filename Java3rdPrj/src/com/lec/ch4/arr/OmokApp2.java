@@ -114,11 +114,7 @@ public class OmokApp2 {
 		    			 System.out.println();
 		    		 }
 		    		 
-//		    		 if(0<ox ox) {
-//		    		 		continue;
-//		    		 }
-		    		 
-		    	// 중복위치 제거는 ?	 
+ 
 		    		 
 
 		    		 

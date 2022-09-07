@@ -27,7 +27,6 @@ public class ScoreApp {
      		do {
      			//국어성적 입력
      			int kor; // 한번이 아니라 두번이상쓰면 지역변수화해서 쓸 것.
-     			System.out.println("인덱스는"+index);
      			do {
      					System.out.println("국어성적 입력");
      					kor = sc.nextInt();
@@ -51,6 +50,8 @@ public class ScoreApp {
      			kors[index] = kor;
      			index++;// 몇개가 담겨져있는가 ? index의 값을말하면됨
      			
+     			//영어성적 입력
+     			
      			//더 할거니?
      			
      			System.out.println("계속입력하시겠습니까");
@@ -72,20 +73,3 @@ public class ScoreApp {
 
 	}// end of main
 } // end of class
-
-//영어성적 입력
-//     			do{
-//     	     		
-//    				System.out.println("영어성적 입력");
-//    				engs[0] = sc.nextInt();
-//    					if (engs[0] < 0 || engs[0] > 100)
-//    						System.out.println("성적의 범위(0~100)를 벗어났습니다!");
-//    			} while (engs[0] < 0 || engs[0] > 100);
-//     			//수학성적 입력
-//     			do{
-//     	     		
-//    				System.out.println("수학성적 입력");
-//    				maths[0] = sc.nextInt();
-//    					if (maths[0] < 0 || maths[0] > 100)
-//    						System.out.println("성적의 범위(0~100)를 벗어났습니다!");
-//    			} while (maths[0] < 0 || maths[0] > 100);
