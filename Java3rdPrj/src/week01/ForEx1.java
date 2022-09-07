@@ -42,6 +42,9 @@ public class ForEx1 {
 //			}
 //		System.out.println();
 //	}
+
+		
+		
 		
 	}
 }
