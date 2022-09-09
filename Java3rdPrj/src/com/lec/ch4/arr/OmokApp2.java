@@ -6,7 +6,7 @@ public class OmokApp2 {
 
 	public static void main(String[] args) {
 		// 너비와 높이는 상수값 변수로 설정하여 비교하기 쉽게 한다.
-		final int WIDTH = 22;
+		final int WIDTH = 22; //x
 	    final int HEIGHT = 22;
 	   
 // 0. 기존 오목판 방식 (배열 사용 X)	    
@@ -89,9 +89,13 @@ public class OmokApp2 {
 		     //8. 반복적으로 바둑돌 출력해보기
 		     
 		     int ox=0, oy=0; 
-		     while(true) {
-		    	
-		    	 EXIT:while (true) {
+		     
+		     final char BLACK_ROCK = '●';
+		     final char WHITE_ROCK = '○';
+		     
+		     int turn=0;
+		     
+		     while (true) {
 		    		 
 		    		 System.out.println("오목 둘 값을 입력하세요");
 		    		 System.out.println("좌표의 범위는 1~20 입니다");
@@ -102,10 +106,17 @@ public class OmokApp2 {
 		    		 // 8-1. 값 검사하기
 		    		 if((ox<=0||oy<=0)||(ox>=21||oy>=21)) 
 		    			 System.out.println("범위를 초과하였습니다. 다시입력하세요.");
-		    		 else if(board[oy][ox] =='○') 
+		    		 else if(board[oy][ox] ==BLACK_ROCK || board[oy][ox] ==WHITE_ROCK) 
 		    			 System.out.println("중복은 안돼. 돌아가. 바꿔줄 생각 없어.");
-		    		 else 
-		    			 board[oy][ox] ='○';
+		    		 else {
+		    			 if(turn%2==0) 
+		    				 board[oy][ox] =BLACK_ROCK;    
+		    			 else 
+		    				 board[oy][ox] =WHITE_ROCK;	 
+		    			 turn++;
+		    		     }
+		    		 
+		    		 
 		    		 
 		    		 
 		    		 for(int y =1; y<=HEIGHT; y++) {
@@ -118,7 +129,7 @@ public class OmokApp2 {
 		    		 
 
 		    		 
-		    	 }
+		    	 
 		     }
 		     
 		     

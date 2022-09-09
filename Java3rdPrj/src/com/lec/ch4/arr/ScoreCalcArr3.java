@@ -180,6 +180,13 @@ public class ScoreCalcArr3 {
 				
 				int input = sc.nextInt();
 				
+				for (int i = 0; i<index; i++) {
+					kors[input-1] = kors[input];
+					engs[input-1] = engs[input];
+					maths[input-1] = maths[input];	
+					
+				}
+				
 			}
 				break;
 				
@@ -249,12 +256,13 @@ public class ScoreCalcArr3 {
 	                  fps.print(engs[i]);
 	                  fps.print(",");
 	                  fps.println(maths[i]);
-	               }
+	                  }
+	               
 	               fout.close();
 	               fps.close();
 	               System.out.println("저장이 완료되었습니다.");   
-			}
-			break;
+			      }
+					break;
 			
 //			======================프로그램 종료========================
 			case 7:
