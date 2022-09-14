@@ -127,7 +127,6 @@ public class ScoreApp {
 				while(fscan.hasNext()) {
 					
 					if (index >= max) {
-						// 늘려야함. 여기서는 공간을 3만큼 늘리기로한다.
 						int[] korTemp = new int[max + 3];
 						int[] engTemp = new int[max + 3];
 						int[] mathTemp = new int[max + 3];
