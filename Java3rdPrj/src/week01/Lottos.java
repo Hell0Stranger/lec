@@ -1,7 +1,7 @@
 package week01;
 import java.util.Random;
 
-public class Lotto {
+public class Lottos {
 
 	public static void main(String[] args) {
 		

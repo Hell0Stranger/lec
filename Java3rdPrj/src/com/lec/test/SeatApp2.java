@@ -40,7 +40,7 @@ public class SeatApp2 {
 			System.out.println("  ┃   3. 자리 섞기   ┃");
 			System.out.println("  ┃   4. 파일 저장   ┃");
 			System.out.println("  ┃   5. 콘솔 출력   ┃");
-			System.out.println("  ┃   5. 종료 하기   ┃");
+			System.out.println("  ┃   6. 종료 하기   ┃");
 			System.out.print  ("  ┗    ₍ᐢᐢ₎·°선택 >");
 			int menu = sc.nextInt(); 
 	
@@ -85,7 +85,7 @@ public class SeatApp2 {
 					auto = true; // 자동입력이 실행되었다면 auto 를 true로 변경
 				} // end of while
 
-				System.out.println(Arrays.toString(studentAuto));
+				System.out.println("자동입력으로 받아온 학생명단"+Arrays.toString(studentAuto));
 				
 			}// end of case2
 				break;
@@ -114,7 +114,11 @@ public class SeatApp2 {
 							i--;
 					}
 				 }
-
+				
+				System.out.println("랜덤 숫자 배열입니다." + Arrays.toString(randomArr));
+				System.out.println("학생 이름 배열입니다." + Arrays.toString(studentsArr));
+				System.out.println();
+				
 				//학생의 이름을 저장한 studentArr과 randomArr의 인덱스를 매칭시켜서 2차원 배열에 담아준다.
 				String[][] matchArr = new String[pnum][2];
 				for (int i = 0; i < pnum; i++) {
@@ -122,13 +126,16 @@ public class SeatApp2 {
 					matchArr[i][1] = randomArr[i];
 				     }
 
+				System.out.println("매칭 시킨 배열입니다."+Arrays.deepToString(matchArr));
+				System.out.println();
 				
 				//랜덤으로 저장되어있는 숫자를 이름과 함께 1번부터 순서대로 정렬해준다.
 				//String numTemp = 숫자를 저장할 임시공간
 				//String nameTemp = 이름을 저장할 임시공간
 				//2개씩 비교하기때문에 총 길이보다 -1 
-				for (int j = 0; j < matchArr.length - 1; j++) 
-					for (int i = 0; i < matchArr.length - 1 - j; i++) {
+				int sort =  matchArr.length - 1;
+				for (int j = 0; j <sort; j++) 
+					for (int i = 0; i < sort- j; i++) {
 						//오름차순 정렬
 						if (Integer.parseInt(matchArr[i][1]) > Integer.parseInt(matchArr[i + 1][1])) {
 							String numTemp;
@@ -143,41 +150,46 @@ public class SeatApp2 {
 						}
 					}
 
+				System.out.println("정렬후 배열입니다."+Arrays.deepToString(matchArr));
+				System.out.println();
 				
 				System.out.println("1,4,5조는 6명 / 2,3조는 4명으로 고정!");
 				
-				int gnum1 = 6,gnum4 = 6, gnum5 = 6;
-				int gnum2 = 4 ,gnum3 = 4;
+				final int GNUM1 = 6;
+				final int GNUM4 = 6;
+				final int GNUM5 = 6;
+				final int GNUM2 = 4;
+				final int GNUM3 = 4;
 				
-				group1 = new String[gnum1];
-				group2 = new String[gnum2];			
-				group3 = new String[gnum3];
-				group4 = new String[gnum4];
-				group5 = new String[gnum5];
+				group1 = new String[GNUM1];
+				group2 = new String[GNUM2];			
+				group3 = new String[GNUM3];
+				group4 = new String[GNUM4];
+				group5 = new String[GNUM5];
 
 				int count = 0; // 배열의 크기, 0~학생수만큼 증가하면서 저장된 이름값을 순서대로 받아올 수 있도록
 				
-				for (int i = 0; i < gnum1; i++) { 
+				for (int i = 0; i < GNUM1; i++) { 
 					group1[i] = matchArr[count][0];
 					count++;
 					}
 	
-				for (int i = 0; i < gnum2; i++) {
+				for (int i = 0; i < GNUM2; i++) {
 					group2[i] = matchArr[count][0];
 					count++;
 				}
 
-				for (int i = 0; i < gnum3; i++) {
+				for (int i = 0; i < GNUM3; i++) {
 					group3[i] = matchArr[count][0];
 					count++;
 				}
 
-				for (int i = 0; i < gnum4; i++) {
+				for (int i = 0; i < GNUM4; i++) {
 					group4[i] = matchArr[count][0];
 					count++;
 				}
 				
-				for (int i = 0; i < gnum5; i++) {
+				for (int i = 0; i < GNUM5; i++) {
 					group5[i] = matchArr[count][0];
 					count++;
 				}
@@ -236,12 +248,7 @@ public class SeatApp2 {
 			}
 				break;
 //================================================5. 콘솔출력===========================================================				
-			case 5: {
-				
-			} break;
-
-//================================================6. 콘솔출력===========================================================				
-			case 6: {
+		case 5: {
 
 				String emptySeat = "   X  ";
 				String upperBound = new String("┌─────────────────┐");
@@ -394,9 +401,9 @@ public class SeatApp2 {
 
 			}
 				break;
-//================================================7. 종료하기==========================================================			
+//================================================6. 종료하기==========================================================			
 
-			case 7:
+			case 6:
 				System.out.println("프로그램 종료");
 				break EXIT;
 
