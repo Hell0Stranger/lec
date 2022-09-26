@@ -33,7 +33,10 @@ public class OmokApp2 {
 //	               System.out.printf("%c",'┼');
 //	         System.out.println();
 //	      }
-	      
+
+
+	
+	    	
 	      System.out.println("================보드 생성================");
 	      
 	     char[][] board = new char[HEIGHT][WIDTH];

@@ -1,16 +1,29 @@
-package com.lec.week5_3;
+package com.lec.week5_5;
 
 public class InheritScore {
 
 	public static void main(String[] args) {
 		
-		Exam exam = new Exam();
-		Exam exam1 = new Exam();
+		// 캡슐덩어리는 : Dependency : 부품
+//		Exam exam = new Exam();
+		Exam exam1 = new Exam(10,10,10);
+		Exam exam2 = new Exam(20,20,20);
+//		ExamPage page = new ExamPage();
+		ExamPage page = new ExamPage(exam1);
 		
-		ExamPage page = new ExamPage();
+		//DI는 Setter Injection과 Constructor Injection 두가지 방법이 있다.
 		
-		System.out.println(exam.toString());
-		System.out.println(exam1.toString());
+		//page - 입출력 기능만하고, 데이터를 바꿔낄 수 있도록만
+		//page.setExam(exam1); // Injection : 결합 
+		//데이터를 바꿔끼워서 사용할 수 있을까 ?
+		//page.print();
+		
+		//Association Has 관계 - 조립형
+		page.setExam(exam2);
+		page.print();
+		
+//		System.out.println(exam.toString());
+//		System.out.println(exam1.toString());
 	}
 
 }
